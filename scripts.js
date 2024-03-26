@@ -181,6 +181,7 @@ function calcCoordinates(shotNumber) {
   // console.log(radialErr["radialErr"].toFixed(2));
   document.getElementById('radial'+shotNumber).value = radialErr["radialErr"].toFixed(2);
   updateTextColor('radial' + shotNumber);
+  setupCanvas();
 }
 
 function calcPic(){
@@ -306,7 +307,6 @@ function hideErrorText(){
 
 // Canvas 
 function setupCanvas(){
-
   // Get the image element
   var image = document.getElementById('targetImage');
   var canvas = document.getElementById('targetCanvas');
