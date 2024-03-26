@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Shot</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    
+
+    <link rel="icon" href="assets/images/TargetIcon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="assets/images/TargetIcon.ico" type="image/x-icon"/>
+    <style></style>
+
+</head>
+<body>
+    
+    <div class="container-fluid">
+        
+    </div>
+    <div class="container-fluid" style="border-style: dotted;">
+        <div class = "row" style="border-style: dotted;">
+            <div class="col-sm-8" style="border-style: dotted;">
+                <div class = "row" style="border-style: dotted;">
+                    <label for="fileInput" class="btn btn-secondary">Select CSV File</label>
+                    <input type="file" id="fileInput" style="visibility:hidden;" lable="Get File" onchange="importCSV()"/>
+
+                    <button onclick="submitData()" class="btn btn-primary">Save Sheet</button>
+                    
+
+                    <div class="modal" tabindex="-1" role="dialog" id="popUpRadial">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Radial Error</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>You have one or more radial errors larger than 19mm, are you sure you want to continue?</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" onclick="exportCSV()" data-dismiss="modal" class="btn btn-primary">Save Data</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div><br></div>
+                <div class = "row" style="border-style: solid;">
+                    
+                    <table class="table-sm">
+                        <thead class = "thead-dark text-center" style="border-style: solid;">
+                          <tr>
+                            <th scope="col">Shot Number</th>
+                            <th scope="col">Lomah X</th>
+                            <th scope="col">Lomah Y</th>
+                            <th scope="col">Measured X</th>
+                            <th scope="col">Measured Y</th>
+                            <th scope="col">Radial Error</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        <tr>
+                            
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                    <div id="errorAlert" class="alert alert-danger mt-3" role="alert" style="display: none; text-align: center;">
+                        <img src="assets/images/stop.png" style="max-width: 6.7%;">
+                        <h1 style="display: inline; margin-left: 10px; margin-top: 50px;">Please fill in all fields.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div id="canvasContainer">
+                    <img class="img-fluid" style="width: 60%; height: auto;" id="targetImage" src= "assets/images/TargetSilhouetteCrop2.png"></img>
+                    <canvas id="targetCanvas" style="position: absolute;top: 0;left: 0; border: hidden;"></canvas>
+                    <canvas id="targetCanvas2" style="position: absolute;top: 0;left: 0; border: hidden;"></canvas>
+                    <canvas id="legendCanvas" style="position: absolute;top: 0;left: 0;border: hidden;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="scripts.js"></script>
+    <script defer src="assets/js/jquery.min.js"></script>
+    <!-- <script defer src="assets/js/popper.min.js"></script> -->
+    <script defer src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
