@@ -21,11 +21,11 @@
 ### TroubleShooting
 - If window does not open, Navigate to: 'http://localhost:8000/index.html'
 - Default browser behavior usually downloads directly to the Downloads folder. If you want to change that you can either change your browser to ask you when downloading files, or change the default file location:
-    > Click the Chrome menu on the top right hand corner of the browser next to the URL bar (3 dots)
-    > Click Settings
-    > Click Show advanced settings and scroll down to the Downloads section
-    > Do one of the following steps:
-    > Click the Change button to set a new default location
-    > Click Ask where to save each file before downloading to manually select the location each time you download a file
-    > Close the Settings tab
+    > 1. Click the Chrome menu on the top right hand corner of the browser next to the URL bar (3 dots)
+    > 2. Click Settings
+    > 3. Click Show advanced settings and scroll down to the Downloads section
+    > 4. Do one of the following steps:
+    > 5. Click the Change button to set a new default location
+    > 6. Click Ask where to save each file before downloading to manually select the location each time you download a file
+    > 7. Close the Settings tab
 - If the shot visual is not updating when updating MeasuredX or MeasuredY, clear your cache in your browser.
