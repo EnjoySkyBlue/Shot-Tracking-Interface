@@ -23,7 +23,9 @@
             <div class="col-sm-8" style="border-style: dotted;">
                 <div class = "row" style="border-style: dotted;">
                     <label for="fileInput" class="btn btn-secondary">Select CSV File</label>
+                    <div style="margin: 10px;" id="fileName" class="row">[File Path Name]</div>
                     <input type="file" id="fileInput" style="visibility:hidden;" lable="Get File" onchange="importCSV()"/>
+                    
 
                     <button onclick="submitData()" class="btn btn-primary">Save Sheet</button>
                     

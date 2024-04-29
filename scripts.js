@@ -33,12 +33,14 @@ function importCSV() {
 
     // Get the selected file input element
     var fileInput = document.getElementById('fileInput');
+    var fileNameDiv = document.getElementById('fileName')
 
     if (fileInput.files.length > 0) {
         var selectedFilePath = fileInput.files[0];
-        FILENAME = selectedFilePath.name;
-
-        var shotInput = readCSV(selectedFilePath.name);
+        var filePathName = selectedFilePath.name;
+        var shotInput = readCSV(selectedFilePath);
+        
+        fileNameDiv.innerText = filePathName;
 
         shotInput.then((dataArray) => {
           const resultDictionary = {};
@@ -114,12 +116,9 @@ function exportCSV(){
 }
 
 async function readCSV(filePath) {
-    var directory = getDir();
-    var csvFilePath = filePath;
 
     try {
-      const response = await fetch(directory+"/Recorded/"+csvFilePath);
-      const data = await response.text();
+      const data = await filePath.text();
       // Remember Regex can be written directly in JS
       const normalizedData = data.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
       
