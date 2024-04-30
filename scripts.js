@@ -33,7 +33,8 @@ function importCSV() {
 
     // Get the selected file input element
     var fileInput = document.getElementById('fileInput');
-    var fileNameDiv = document.getElementById('fileName')
+    var fileNameDiv = document.getElementById('fileName');
+    // FILENAME = fileNameDiv;
 
     if (fileInput.files.length > 0) {
         var selectedFilePath = fileInput.files[0];
@@ -70,6 +71,8 @@ function exportCSV(){
   // destroyRowData(); 
 
   targetDataDictionary = SHOT_DATA;
+  FILENAME = document.getElementById('fileName').innerText;
+  console.log(FILENAME)  
   spfile = FILENAME.split(".");
   var fileName;
   
@@ -80,7 +83,7 @@ function exportCSV(){
   else {
     fileName = spfile[0]+" M."+spfile[1]
   }
-  // console.log("FileName: ", fileName)
+  console.log("FileName: ", fileName)
 
   // Extract properties and shots
   const properties = Object.keys(targetDataDictionary[Object.keys(targetDataDictionary)[0]]);
@@ -419,7 +422,7 @@ function showMeasuredShots(){
     posY = calcPixelY(posY,canvas.height)*ratioHeight*(((SIL.height-SIL.yBuffer)+SIL.yOffset)/(SIL.height))+((11.65)*ratioHeight);
 
     var radialC = document.getElementById("radial"+i);
-    console.log(radialC.value)
+    // console.log(radialC.value)
     
     if (radialC.value > SIL.radialError){
       // Red
@@ -536,8 +539,8 @@ function submitData(){
   for (let i = 1; i <= Object.keys(SHOT_DATA).length;i++){
     elementX = document.getElementById("measuredX"+i).value;
     elementY = document.getElementById("measuredY"+i).value;
-    console.log(elementX);
-    console.log(elementY);
+    // console.log(elementX);
+    // console.log(elementY);
 
     if (elementX == "" || elementY == ""){
       showErrorText();
